@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+
+/* --------------------Задание первое ----------------------*/
+/*
+var a = 1, b = 1, c, d;
+c = ++a; alert(c);           // 2 - префиксная форма ++a, инкремент срабатывает перед присваиванием с  
+d = b++; alert(d);           // 1 - инкремент срабатывает после присваивания
+c = (2+ ++a); alert(c);      // 5 - переменная а была увеличена до 2 ранее, снова срабатывает её прификсное увеличение, 3 и + 2 будет 5
+d = (2+ b++); alert(d);      // 4 - аналогично примеру выше, но из-за постфиксного увеличения d сначала сложидась из суммы, а уже потом b увеличилось
+alert(a);                    // 3 - b три раза увеличивалась на 1, так это отдельно стоящий алёрт, префикс или постфикс был ранее - неважно
+alert(b);                    // 3 - а три раза увеличивалась на 1
+*/
+
+
+/* --------------------Задание второе ----------------------*/
+/*
+var a = 2;
+var x = 1 + (a *= 2);    // a *=2 эквивалентно a=a*2, Знач x = 5
+*/
+
+/* --------------------Задание третье ----------------------*/
+
+function custRand (min,max) {
+ var ans = parseInt(Math.random()*(max - min)+min); // генерит целое число в выбранном промежутке
+ return ans;
+}
+
+/*
+function isPosit(a) {
+	var ans = (a>=0) ? true : false; // если положительное число или 0 то тру
+  return ans;
+}
+
+var a = custRand(-10,10); 
+var b = custRand(-10,10); 
+var ans;
+
+if (isPosit(a) && isPosit(b)){  //разност если положительные
+	ans = a - b;}
+else if (!isPosit(a) && !isPosit(b)){ //произведение если отрицательные
+	ans = a * b;}
+else {              //сума при разных знаках
+	ans = a + b;}  
+
+document.write(a+" "+b+" "+ans);
+*/
+
+/* --------------------Задание четвёртое ----------------------*/
+
+/*
+var a = custRand (0,15); //функ из 3-го задания
+
+switch (a) {
+	case 0: document.write(0 + "<br>");
+	case 1: document.write(1 + "<br>");
+  case 2: document.write(2 + "<br>");
+  case 3: document.write(3 + "<br>");
+  case 4: document.write(4 + "<br>");
+  case 5: document.write(5 + "<br>");
+  case 6: document.write(6 + "<br>");
+  case 7: document.write(7 + "<br>");
+  case 8: document.write(8 + "<br>");
+  case 9: document.write(9 + "<br>");
+  case 10: document.write(10 + "<br>");
+  case 11: document.write(11 + "<br>");
+  case 12: document.write(12 + "<br>");
+  case 13: document.write(13 + "<br>");
+  case 14: document.write(14 + "<br>");
+  case 15: document.write(15 + "<br>"); break;
+  default: document.write('Est nein stackenblochen!!!');
+}
+*/
+//Альтернативно через рекурсию
+
+/*
+ function upTo15 (n) {
+    if (n>=15) {
+        switch (n) {
+        case 15: document.write(n); break;
+        default: document.write("Число больше 15");
+        }
+    }
+    else {
+        document.write(n+"<br>");
+        upTo15(n+1);
+        }
+}
+ 
+upTo15(custRand (0,15));
+*/
+
+/* --------------------Задание пятое ----------------------*/
+
+function custSum(a,b) { return a + b;} 
+function custMult(a,b) { return a * b;} 
+function custMinus(a,b) { return a - b;} 
+function custDiv(a,b) { return a / b;} 
+/*
+document.write(custSum(3,2)+"<br>");
+document.write(custMult(3,2)+"<br>");
+document.write(custMinus(3,2)+"<br>");
+document.write(custDiv(3,2));
+*/
+/* --------------------Задание шестое ----------------------*/
+
+
+function custCalc(a,b,o) {
+  switch (o) {
+  	case("+"): return custSum(a,b); break;
+  	case("*"): return custMult(a,b); break;
+  	case("-"): return custMinus(a,b); break;
+  	case("/"): return custDiv(a,b); break;
+  }
+}
+/*
+document.write(custCalc(3,2,"+")+"<br>");
+document.write(custCalc(3,2,"*")+"<br>");
+document.write(custCalc(3,2,"-")+"<br>");
+document.write(custCalc(3,2,"/")+"<br>");
+*/
+/* --------------------Задание седьмое ----------------------*/
+
+/*
+if (0==null){document.write(1);}
+else if (0>null){document.write(2);}
+else if (0<null){document.write(3);}
+else if (0!=null){document.write(4);}
+else {document.write(666);}
+*/
+
+//ноль - это число, налл - объект означающий отсутствие данных
+
+/* --------------------Задание восьмое ----------------------*/
+
+function custPower(a,p) {
+		if (p==0) {
+    	return 1;}
+    else {  
+      return a*custPower(a,p-1);}
+}
+
+//alert(custPower(2,4));
+
+
+  </script>
+  
+  
+</body>
+</html>
