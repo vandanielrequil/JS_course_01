@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+
+function Num(n) {
+if(n.length>3) {
+alert('Введённое число больше 999');
+return
+}
+else {
+	this.units=n[n.length-1];
+  this.tens=n[n.length-2];
+  this.hundreds=n[n.length-3];
+	}
+}
+
+while(1) {
+	var numPr = prompt("Введите число от 0 до 999");
+  if (!isNaN(numPr) && !numPr=="") {break;}
+  else {alert('Введите число');}
+} 
+
+var newNum = new Num(numPr);
+alert('Тысячи: '+newNum.hundreds+'  Десятки: '+newNum.tens+'  Единицы: '+newNum.units);
+console.log(newNum);
+
+
+
+</script>
+
+  
+</body>
+</html>
